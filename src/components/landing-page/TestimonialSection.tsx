@@ -28,12 +28,14 @@ const TestimonialSection = () => {
         Loved by users who care about presentation
       </h3>
 
-      <div className='w-full flex flex-col items-center'>
+      <div className='w-full flex flex-col items-center md:flex-row md:flex-wrap md:justify-center md:gap-4'>
         {testimonials.map((testimonial, i) => {
           return (
             <div
               key={i}
-              className='w-[90%] flex flex-col items-start text-left gap-2 bg-card py-4 px-[5%] border-b border-dashed rounded-2xl mt-6 shadow'
+              className='w-[90%] flex flex-col items-start justify-center
+              text-left gap-2 bg-card py-4 px-[5%] border-b border-dashed
+              rounded-2xl mt-6 shadow md:w-[22rem] md:min-h-[12rem]'
             >
               <p className='pb-1 border-b border-dashed'>
                 {testimonial.content}

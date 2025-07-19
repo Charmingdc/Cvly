@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
-import { Menu, X, Gift } from "lucide-react";
+import { Menu, X, Coffee } from "lucide-react";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -27,11 +27,15 @@ const Navbar = () => {
           className='w-[90%] fixed top-20 left-1/2 -translate-x-1/2 flex
         flex-col justify-center gap-6 p-4 bg-card rounded-xl z-20'
         >
-          <Link to='/signup'>Sign Up</Link>
-          <Link to='/signin'> Sign In </Link>
+          <Link to='/signup' className='hover:text-blue-800'>
+            Sign Up
+          </Link>
+          <Link to='/signin' className='hover:text-blue-800'>
+            Sign In
+          </Link>
 
           <button className='w-full h-12 flex items-center justify-center gap-2 py-3 bg-background text-foreground rounded-2xl'>
-            <Gift size={17} /> Donate
+            <Coffee size={17} /> Buy me a coffee
           </button>
         </div>
       )}

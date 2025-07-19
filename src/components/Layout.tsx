@@ -1,8 +1,11 @@
+import { useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Navbar from "./navigation/Navbar";
 import Footer from "./landing-page/Footer";
 
 const Layout = () => {
+  const location: string = useLocation();
+
   return (
     <>
       <header>
@@ -13,9 +16,11 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>
-      <Footer />
-      </footer>
+      {location.pathname === "/" && (
+        <footer>
+          <Footer />
+        </footer>
+      )}
     </>
   );
 };

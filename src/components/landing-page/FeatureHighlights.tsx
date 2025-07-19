@@ -37,7 +37,7 @@ const FeatureHighlights = () => {
         smarter, simpler, and way more useful.
       </p>
 
-      <div className='w-full flex flex-col items-center gap-2'>
+      <div className='w-full flex flex-col items-center gap-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-16 md:gap-y-4'>
         {features.map((feature, i) => {
           const Icon = feature.icon;
           const tilt = i % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]";
@@ -45,7 +45,10 @@ const FeatureHighlights = () => {
           return (
             <div
               key={i}
-              className={`w-[90%] flex flex-col items-start text-left gap-5 bg-card py-4 px-[5%] border-b border-dashed rounded-2xl mt-6 shadow transform ${tilt} transition-all duration-500 hover:rotate-0`}
+              className={`w-[90%] flex flex-col items-start justify-center text-left gap-5
+              bg-card py-4 px-[5%] border-b border-dashed rounded-2xl mt-6
+              shadow transform ${tilt} transition-all duration-500
+              hover:rotate-0 md:w-[20rem] md:min-h-[20rem] md:py-6`}
             >
               <div className='w-fit bg-black/10 p-5 rounded-lg mb-4'>
                 <Icon size={34} />

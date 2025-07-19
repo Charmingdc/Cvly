@@ -5,10 +5,9 @@ import CredibilitySection from "@/components/landing-page/CredibilitySection";
 import TestimonialSection from "@/components/landing-page/TestimonialSection";
 import CallOut from "@/components/landing-page/CallOut";
 
-
 const LandingPage = () => {
   return (
-    <div className='w-screen flex flex-col items-center gap-20 p-3'>
+    <div className='w-screen flex flex-col items-center gap-24 p-3 md:gap-36'>
       <HeroSection />
       <HowItWorks />
       <FeatureHighlights />

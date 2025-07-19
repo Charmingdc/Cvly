@@ -31,7 +31,7 @@ const HowItWorks = () => {
         Turn your resume into a polished, shareable link in just a few seconds.
       </p>
 
-      <div className='w-full flex flex-col items-center gap-2'>
+      <div className='w-full flex flex-col items-center gap-2 md:flex-row md:flex-wrap md:justify-center md:gap-6'>
         {steps.map((step, i) => {
           const Icon = step.icon;
 
@@ -40,7 +40,7 @@ const HowItWorks = () => {
               key={i}
               className='relative w-[90%] flex flex-col items-center gap-3
               bg-card py-8 px-[5%] shadow-md rounded-2xl transition duratiom-500
-              mt-6 hover:shadow-none'
+              mt-6 hover:shadow-none md:w-[22rem] md:min-h-[18rem]'
             >
               <div
                 className='absolute top-[-12px] left-[-12px] w-10 h-10
