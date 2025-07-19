@@ -1,26 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:wght@100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-  --background: 14, 14, 14;
-  --foreground: 220, 220, 220;
-  --card: 22, 22, 22;
-  --card-foreground: 180, 180, 190;
-  --input: 18, 18, 18;
-  --input-foreground: 200, 200, 210;
-  --border: 0, 100, 0;
-}
-
 @layer base {
   :root {
-    --background: 245, 245, 245;
-    --foreground: 20, 20, 25;
+    --background: 15, 23, 42;
+    --foreground: 200, 206, 214;
+    --card: 30, 41, 59;
+    --card-foreground: 203, 213, 225;
+    --input: 20, 29, 48;
+    --input-foreground: 226, 232, 240;
+    --border: 51, 65, 85;
+    --muted: 30, 41, 59;
+    --muted-foreground: 148, 163, 184;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: 245, 248, 252;
+    --foreground: 30, 41, 59;
     --card: 255, 255, 255;
-    --card-foreground: 45, 50, 60;
-    --input: 235, 235, 240;
-    --input-foreground: 10, 10, 10;
-    --border: 220, 220, 220;
+    --card-foreground: 51, 65, 85;
+    --input: 241, 245, 249;
+    --input-foreground: 30, 41, 59;
+    --border: 203, 213, 225;
+    --muted: 241, 245, 249;
+    --muted-foreground: 71, 85, 105;
   }
 }
 
@@ -29,6 +37,36 @@
     @apply border-border p-0 m-0 outline-none;
   }
   body {
-    @apply w-screen font-courier bg-background text-foreground;
+    @apply w-screen font-nunito bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(146% + 1.3px);
+    height: 85px;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-bottom .shape-fill {
+    fill: rgb(var(--card));
+  }
+
+  @media (max-width: 767px) {
+    .custom-shape-divider-bottom svg {
+      width: calc(128% + 1.3px);
+      height: 200px;
+    }
   }
 }
