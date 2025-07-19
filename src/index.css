@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  --background: 14, 14, 14;
+  --foreground: 220, 220, 220;
+  --card: 22, 22, 22;
+  --card-foreground: 180, 180, 190;
+  --input: 18, 18, 18;
+  --input-foreground: 200, 200, 210;
+  --border: 0, 100, 0;
+}
+
+@layer base {
+  :root {
+    --background: 245, 245, 245;
+    --foreground: 20, 20, 25;
+    --card: 255, 255, 255;
+    --card-foreground: 45, 50, 60;
+    --input: 235, 235, 240;
+    --input-foreground: 10, 10, 10;
+    --border: 220, 220, 220;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border p-0 m-0 outline-none;
+  }
+  body {
+    @apply w-screen font-courier bg-background text-foreground;
+  }
+}
