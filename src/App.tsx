@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import LandingPage from "./pages/LandingPage";
 import SignupPage from "./pages/SignupPage";
+import SignInPage from "./pages/SignInPage";
 
 const App = () => {
   return (
@@ -10,8 +11,9 @@ const App = () => {
       <Routes>
         {/** Auth Pages **/}
         <Route path='/signup' element={<SignupPage />} />
-        
-        { /** Protected Pages **/ }
+        <Route path='/signin' element={<SignInPage />} />
+
+        {/** Protected Pages **/}
         <Route path='/' element={<Layout />}>
           <Route index element={<LandingPage />} />
         </Route>
