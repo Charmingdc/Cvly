@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <div className='w-full flex flex-col items-center text-center gap-3 mt-36'>
+    <div className='w-full flex flex-col items-center text-center gap-3 mt-20'>
       <h2 className='font-chewy font-extrabold text-3xl md:mt-12'>
         Cvly - A smarter way to share your resume
       </h2>

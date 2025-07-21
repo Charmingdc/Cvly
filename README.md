@@ -1,113 +1,121 @@
-# Cvly: Smart Resume Sharing 📄
+# 🔗 Cvly: A Smarter Way to Share Your Resume
 
-Welcome to Cvly, a modern web application designed to revolutionize how professionals share their resumes. This project transforms your traditional PDF into a professional, shareable link, offering valuable insights into who views or downloads your work. It's built to empower job seekers and freelancers with intelligent tracking and seamless updates, making sure your application stands out in today's competitive landscape.
+Cvly transforms your traditional resume into a dynamic, shareable online link. ✨ Say goodbye to endless file uploads and gain valuable insights into who views and downloads your professional profile. Built for the modern job seeker, Cvly helps you make a lasting impression and stay ahead in your career journey.
 
-## Getting Started 🚀
+## 🚀 Getting Started
 
-To get Cvly up and running on your local machine, follow these straightforward steps. It's quick, I promise!
+Follow these steps to get Cvly up and running on your local machine.
 
 ### Prerequisites
 
-Make sure you have Node.js and npm (or your preferred package manager like Yarn or pnpm) installed on your system.
+Before you begin, ensure you have the following installed:
 
-### Installation
+*   🌐 [Node.js](https://nodejs.org/) (LTS version recommended)
+*   📦 [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-1.  **Clone the Repository**:
-    Begin by cloning the project to your local machine using Git:
+### Clone the Repository
 
-    ```bash
-    git clone git@github.com:Charmingdc/cvly
-    ```
+First, clone the project repository to your local machine:
 
-2.  **Navigate to the Project Directory**:
-    Move into the newly cloned project folder:
+```bash
+git clone git@github.com:Charmingdc/cvly.git
+cd cvly
+```
 
-    ```bash
-    cd cvly
-    ```
+### Install Dependencies
 
-3.  **Install Dependencies**:
-    Install all the required packages for the project. I recommend using npm, but feel free to use your package manager of choice.
+Next, install all the required project dependencies:
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+# or
+yarn install
+```
 
-## Usage 💻
+### Run the Development Server
 
-Once you've installed all the dependencies, you're ready to launch the development server and see Cvly in action!
-
-### Running the Development Server
-
-To start the local development server, simply run:
+To start the development server and view the application in your browser:
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-This command will compile the project and open it in your default web browser, usually at `http://localhost:5173`. You'll land directly on the captivating main page of Cvly. From there, you can explore the user interface, interact with the different sections like the hero, how it works, and features, and imagine how your own resume would shine using this platform.
+The application will typically be available at `http://localhost:5173`.
 
-## Key Features ✨
+### Build for Production
 
-Cvly comes packed with features designed to give you an edge in your professional endeavors:
+To create a production-ready build of the application:
 
-*   **One-Click Shareable Links**: Say goodbye to repeatedly uploading the same file. Cvly generates a single, clean link for your resume that you can share anywhere – email, portfolio, or chat.
-*   **Flexible Viewing Options**: Empower your audience with choice. They can either view your resume directly in their browser or download it, all without any extra hassle.
-*   **Actionable Analytics**: Gain invaluable insights with real-time tracking. Monitor total views, downloads, and precise timestamps to understand when and how your resume is being engaged with.
-*   **Effortless Updates**: Your professional journey is always evolving, and so should your resume. Upload a new version anytime, and the shareable link remains consistently the same.
-*   **Responsive and Modern UI**: Designed with a mobile-first approach using Tailwind CSS and dynamic themes, ensuring a seamless and engaging experience across all devices.
-*   **Structured Component Architecture**: A clear and modular component structure (e.g., `Layout`, `Navbar`, `HeroSection`) makes the codebase maintainable and easy to extend.
+```bash
+npm run build
+# or
+yarn build
+```
 
-## Technologies Used 🛠️
+## 🌟 Usage
 
-This project leverages a modern and robust tech stack to deliver a smooth and efficient user experience:
+Cvly offers a straightforward workflow for managing and sharing your professional resume.
 
-| Technology         | Description                                     | Link                                                            |
-| :----------------- | :---------------------------------------------- | :-------------------------------------------------------------- |
-| **React**          | A declarative, component-based JavaScript library for building user interfaces. | [React](https://react.dev/)                                     |
-| **TypeScript**     | A strongly typed superset of JavaScript that compiles to plain JavaScript. | [TypeScript](https://www.typescriptlang.org/)                   |
-| **Vite**           | A next-generation frontend tooling that provides an extremely fast development experience. | [Vite](https://vitejs.dev/)                                     |
-| **Tailwind CSS**   | A utility-first CSS framework for rapidly building custom designs. | [Tailwind CSS](https://tailwindcss.com/)                        |
-| **ESLint**         | A pluggable linting utility for JavaScript and JSX. | [ESLint](https://eslint.org/)                                   |
-| **React Router DOM** | Declarative routing for React.js.               | [React Router DOM](https://reactrouter.com/web/guides/quick-start) |
-| **Lucide React**   | A collection of beautiful and customizable open-source icons. | [Lucide React](https://lucide.dev/)                             |
-| **PostCSS**        | A tool for transforming CSS with JavaScript plugins. | [PostCSS](https://postcss.org/)                                 |
-| **Autoprefixer**   | A PostCSS plugin to parse CSS and add vendor prefixes to CSS rules. | [Autoprefixer](https://github.com/postcss/autoprefixer)         |
+1.  **Landing Page**: Upon visiting the application, you'll land on a welcoming page (`/`) that highlights Cvly's features and benefits.
+2.  **Authentication**: Navigate to `/signup` to create a new account or `/signin` if you already have one. Cvly supports Google and GitHub authentication for a quick and secure login experience.
+3.  **Dashboard**: After successful authentication, you'll be redirected to your personal dashboard (`/dashboard`). This is your central hub for managing your resumes.
+4.  **Upload New Resume**: Head over to `/new` to upload your resume in PDF format. Once uploaded, Cvly will generate a unique, shareable link for it.
+5.  **Track Insights**: From your dashboard, you can track real-time statistics, including total views, downloads, and timestamps, giving you a clear picture of engagement with your resume.
+6.  **Settings**: Adjust your account preferences and settings at `/settings`.
 
-## Contributing 🤝
+## ✨ Key Features
 
-I welcome contributions to make Cvly even better! If you have ideas for new features, bug fixes, or improvements, please feel free to contribute.
+*   **One-Link Resume Sharing**: 🔗 Transform your PDF resume into a professional, shareable link that works seamlessly across all platforms, eliminating the need for multiple file uploads.
+*   **Real-time Analytics**: 📊 Gain deep insights into your resume's performance with intelligent tracking of views, downloads, and engagement timestamps.
+*   **Streamlined Authentication**: 🔑 Securely sign in or sign up using familiar services like Google and GitHub, ensuring a smooth and reliable user experience.
+*   **Always Up-to-Date**: 🔄 Effortlessly update your resume anytime; your unique shareable link remains constant, ensuring recipients always see your latest version.
+*   **Modern & Responsive Design**: 📱 Enjoy a sleek, intuitive user interface crafted with Tailwind CSS, providing a consistent experience across all devices.
+*   **Type-Safe Development**: 🛡️ Built with TypeScript for enhanced code quality, maintainability, and fewer runtime errors.
 
-Here's how you can get started:
+## 🛠️ Technologies Used
 
-*   ✨ **Fork the Repository**: Start by forking this project to your GitHub account.
-*   🌿 **Create a New Branch**: Make sure to create a new branch for your specific feature or fix. Use a descriptive name like `feat/add-analytics` or `fix/navbar-bug`.
-*   💻 **Make Your Changes**: Implement your changes, ensuring your code adheres to the existing style and quality.
-*   📝 **Commit Your Work**: Write clear, concise commit messages that explain the purpose of your changes.
-*   ⬆️ **Push to Your Fork**: Push your new branch to your forked repository.
-*   ➡️ **Open a Pull Request**: Finally, open a pull request against the `main` branch of this repository. Describe your changes thoroughly and link any relevant issues.
+Cvly is built with a robust and modern stack, ensuring a performant and maintainable application.
 
-Thank you for considering contributing!
+| Technology      | Description                                | Version | Link                                                 |
+| :-------------- | :----------------------------------------- | :------ | :--------------------------------------------------- |
+| **React**       | A JavaScript library for building UIs      | 19.1.0  | [react.dev](https://react.dev/)                      |
+| **TypeScript**  | Typed superset of JavaScript               | 5.8.3   | [typescriptlang.org](https://www.typescriptlang.org/) |
+| **Vite**        | Next-generation frontend tooling           | 7.0.4   | [vitejs.dev](https://vitejs.dev/)                    |
+| **Tailwind CSS**| Utility-first CSS framework                | 3.4.17  | [tailwindcss.com](https://tailwindcss.com/)          |
+| **React Router**| Declarative routing for React              | 7.7.0   | [reactrouter.com](https://reactrouter.com/)          |
+| **Lucide React**| Beautiful & customizable React icons       | 0.525.0 | [lucide.dev](https://lucide.dev/)                    |
+| **ESLint**      | Pluggable JavaScript linter                | 9.30.1  | [eslint.org](https://eslint.org/)                    |
+| **PostCSS**     | Tool for transforming CSS with JS plugins  | 8.5.6   | [postcss.org](https://postcss.org/)                  |
 
-## License 📜
+## 🌱 Contributing
 
-This project does not currently include an explicit license file in the repository. Please contact the author for licensing information.
+We welcome contributions from the community! If you'd like to contribute, please follow these guidelines:
 
-## About the Author 👋
+*   **Fork the repository**. 🍴
+*   **Clone your forked repository** to your local machine.
+*   **Create a new branch** for your feature or bug fix: `git checkout -b feature/your-feature-name` or `bugfix/issue-description`. 🐞
+*   **Make your changes**, ensuring they adhere to the project's coding standards.
+*   **Commit your changes** with clear, descriptive commit messages. 📝
+*   **Push your branch** to your forked repository.
+*   **Open a pull request** to the `main` branch of the original repository. Please describe your changes thoroughly. 🤝
 
-Hi there! I'm Charmingdc, the developer behind Cvly. I'm passionate about building user-friendly and impactful web applications.
+## 👤 Author
 
-*   **Portfolio**: [Visit my Portfolio](https://adebayomuis.vercel.app)
-*   **LinkedIn**: [Your LinkedIn Placeholder]
-*   **Twitter**: [Your Twitter Placeholder]
+**Charmingdc**
+
+A passionate frontend developer who loves building intuitive and engaging web experiences.
+
+*   **Portfolio**: [adebayomuis.vercel.app](https://adebayomuis.vercel.app)
+*   **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)
+*   **Twitter/X**: [Your Twitter/X Profile](https://twitter.com/yourusername)
 
 ---
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/Charmingdc/cvly/actions)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+[![React 19.1.0](https://img.shields.io/badge/React-19.1.0-blue?style=flat&logo=react)](https://react.dev/)
+[![TypeScript 5.8.3](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite 7.0.4](https://img.shields.io/badge/Vite-7.0.4-orange?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS 3.4.17](https://img.shields.io/badge/Tailwind_CSS-3.4.17-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
 [![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
