@@ -1,4 +1,4 @@
-import ResumesChart from "@/components/home/ResumesChart";
+import GeneralAnalytics from "@/components/resume/GeneralAnalytics";
 
 const Dashboard = () => {
   return (
@@ -9,13 +9,13 @@ const Dashboard = () => {
       </h1>
 
       <p className='text-muted-foreground -mt-1'>
-        Manage and view your resumes analytics
+        Manage and view your cv analytics
       </p>
 
       <h1 className='font-bold text-muted-foreground text-xl mt-8 mb-2'>
-        General Resumes Analytics
+        General Cv Analytics
       </h1>
-      <ResumesChart />
+      <GeneralAnalytics />
     </div>
   );
 };
