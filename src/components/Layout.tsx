@@ -1,5 +1,5 @@
-import { useLocation } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
+import { useLocation, Outlet } from "react-router-dom";
 import Navbar from "./navigation/Navbar";
 import Footer from "./landing-page/Footer";
 
@@ -13,7 +13,9 @@ const Layout = () => {
       </header>
 
       <main className='w-screen flex flex-col items-center p-4 pt-20'>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </main>
 
       {location.pathname === "/" && (

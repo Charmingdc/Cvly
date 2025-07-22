@@ -1,31 +1,60 @@
+import { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
-import LandingPage from "./pages/LandingPage";
-import SignupPage from "./pages/SignupPage";
-import SignInPage from "./pages/SignInPage";
-import Dashboard from "./pages/Dashboard";
-import UploadPage from "./pages/UploadPage";
-import SettingsPage from "./pages/SettingsPage";
 
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        {/** Auth Pages **/}
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='/signin' element={<SignInPage />} />
+// Lazy-loaded pages
+const LandingPage = lazy(() => import("./pages/LandingPage"));
+const SignupPage = lazy(() => import("./pages/SignupPage"));
+const SignInPage = lazy(() => import("./pages/SignInPage"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const UploadPage = lazy(() => import("./pages/UploadPage"));
+const ResumesPage = lazy(() => import("./pages/ResumesPage"));
+const ResumePage = lazy(() => import("./pages/ResumePage"));
+const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
-        {/** Protected Pages **/}
-        <Route path='/' element={<Layout />}>
-          <Route index element={<LandingPage />} />
-          <Route path='dashboard' element={<Dashboard />} />
-          <Route path='new' element={<UploadPage />} />
-          <Route path='settings' element={<SettingsPage />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-};
+interface AppRoute {
+  path: string;
+  element: JSX.Element;
+}
+
+// Public (auth) routes
+const publicRoutes: AppRoute[] = [
+  { path: "/signup", element: <SignupPage /> },
+  { path: "/signin", element: <SignInPage /> }
+];
+
+// Protected (inside layout) routes
+const protectedRoutes: AppRoute[] = [
+  { path: "", element: <LandingPage /> },
+  { path: "dashboard", element: <Dashboard /> },
+  { path: "new", element: <UploadPage /> },
+  { path: "resumes", element: <ResumesPage /> },
+  { path: "resume/:id", element: <ResumePage /> },
+  { path: "settings", element: <SettingsPage /> }
+];
+
+const App = () => (
+  <Router>
+    <Routes>
+      {/* Public Routes */}
+      {publicRoutes.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
+      ))}
+
+      {/* Protected Routes under Layout */}
+      <Route path='/' element={<Layout />}>
+        {protectedRoutes.map(({ path, element }) => (
+          <Route
+            key={path || "index"}
+            index={path === ""}
+            path={path === "" ? undefined : path}
+            element={element}
+          />
+        ))}
+      </Route>
+    </Routes>
+  </Router>
+);
 
 export default App;
