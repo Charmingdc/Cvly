@@ -30,6 +30,7 @@ const Sidebar = ({
           return (
             <Link
               to={path.url}
+              key={i}
               className={`${
                 currentPath === path.url
                   ? "text-blue-800"
