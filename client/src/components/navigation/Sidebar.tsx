@@ -20,7 +20,7 @@ const Sidebar = ({
       <div
         className={`w-[50%] h-[100vh] fixed ${
           openMenu ? "left-[0%]" : "-left-[50%]"
-        } flex flex-col bg-card pt-16 border-r transition-all duration-500 ease-in-out md:w-fit md:pr-6`}
+        } flex flex-col bg-card pt-16 border-r z-10 transition-all duration-500 ease-in-out md:w-fit md:pr-6`}
       >
         {paths.map((path, i) => {
           const Icon = path.icon;
