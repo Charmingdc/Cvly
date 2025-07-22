@@ -4,7 +4,7 @@ import ViewsToDownloadsGraph from "./ViewsToDownloadsGraph";
 
 const GeneralAnalytics = () => {
   return (
-    <div className='w-full grid grid-cols-[repeat(auto-fit,minmax(19rem,1fr))] grid-rows-[repeat(auto-fit, 1fr)] justify-center content-center gap-5'>
+    <div className='w-full grid grid-cols-[repeat(auto-fit,minmax(19rem,1fr))]  grid-rows-[repeat(auto-fit, 1fr)] justify-center content-center gap-4'>
       {/** total uploaded resumes count **/}
       <TotalResumeCount count={0} />
 

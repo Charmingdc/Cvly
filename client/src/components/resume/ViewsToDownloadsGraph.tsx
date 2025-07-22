@@ -2,7 +2,7 @@ import { ChartArea } from "lucide-react";
 
 const ViewsToDownloadsGraph = () => {
   return (
-    <div className='flex flex-col gap-2 bg-card p-3 border rounded-lg'>
+    <div className='flex flex-col gap-2 bg-card p-3 border rounded-lg shadow'>
       <div className='w-full flex flex-row items-center justify-between'>
         <h2 className='font-bold'> Views - Downloads Rates Graph </h2>
 

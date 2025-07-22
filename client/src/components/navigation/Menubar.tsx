@@ -14,7 +14,7 @@ const Menubar = () => {
       <a
         to='https://github.com/Charmingdc/cvly'
         target='_blank'
-        className='w-full h-12 flex items-center justify-center gap-2 py-3 text-foreground border border-background rounded-2xl mt-2'
+        className='w-full h-12 flex items-center justify-center gap-2 py-3 text-foreground border-2 border-background rounded-2xl mt-2'
       >
         <img
           src='/icons/github-icon.png'

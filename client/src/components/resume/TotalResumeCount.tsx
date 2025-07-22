@@ -6,7 +6,7 @@ const TotalResumeCount = ({ count }: { count: number }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='flex flex-col gap-3 bg-card p-3 border rounded-lg'>
+    <div className='flex flex-col gap-3 bg-card p-3 border rounded-lg shadow'>
       <div className='w-full flex flex-row items-center justify-between'>
         <h2 className='font-bold'> Number of Resumes </h2>
 

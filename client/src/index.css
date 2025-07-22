@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,29 +7,29 @@
 
 @layer base {
   :root {
-    --background: 15, 23, 42;
-    --foreground: 200, 206, 214;
-    --card: 30, 41, 59;
-    --card-foreground: 203, 213, 225;
-    --input: 20, 29, 48;
-    --input-foreground: 226, 232, 240;
-    --border: 51, 65, 85;
-    --muted: 30, 41, 59;
-    --muted-foreground: 148, 163, 184;
+    --background: 245, 248, 254;
+    --foreground: 50, 65, 90;
+    --card: 250, 253, 255;
+    --card-foreground: 60, 75, 100;
+    --input: 242, 246, 252;
+    --input-foreground: 55, 70, 95;
+    --border: 225, 230, 242;
+    --muted: 245, 248, 255;
+    --muted-foreground: 110, 125, 150;
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: 245, 248, 252;
-    --foreground: 30, 41, 59;
-    --card: 255, 255, 255;
-    --card-foreground: 51, 65, 85;
-    --input: 241, 245, 249;
-    --input-foreground: 30, 41, 59;
-    --border: 203, 213, 225;
-    --muted: 241, 245, 249;
-    --muted-foreground: 71, 85, 105;
+    --background: 18, 28, 45;
+    --foreground: 195, 210, 230;
+    --card: 22, 34, 55;
+    --card-foreground: 215, 225, 240;
+    --input: 26, 38, 60;
+    --input-foreground: 210, 225, 245;
+    --border: 40, 56, 80;
+    --muted: 24, 32, 50;
+    --muted-foreground: 145, 160, 180;
   }
 }
 
