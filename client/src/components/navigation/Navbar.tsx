@@ -4,19 +4,23 @@ import { Menu, X } from "lucide-react";
 
 const Sidebar = lazy(() => import("@/components/navigation/Sidebar"));
 const Menubar = lazy(() => import("@/components/navigation/Menubar"));
+const AccountPopover = lazy(
+  () => import("@/components/navigation/AccountPopover")
+);
 
 const Navbar = () => {
   const currentPath: string = useLocation().pathname;
   const isLandingPage: boolean = currentPath === "/";
 
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openPopover, setOpenPopover] = useState<boolean>(false);
 
   return (
     <nav>
       <div
         className={`${
           isLandingPage ? "w-[90%] top-2 border rounded-xl" : "w-screen top-0"
-        } fixed left-1/2 -translate-x-1/2 flex flex-row items-center justify-between bg-card py-3 px-4 border-b border-background z-20`}
+        } fixed left-1/2 -translate-x-1/2 flex flex-row items-center justify-between bg-card py-3 px-5 border-b border-background z-20`}
       >
         {isLandingPage && (
           <h1 className='font-bold font-chewy  text-2xl'> Cvly</h1>
@@ -36,12 +40,19 @@ const Navbar = () => {
             width='40px'
             height='40px'
             className='border rounded-full'
+            onClick={() => setOpenPopover(!openPopover)}
           />
         )}
       </div>
 
+      {openPopover && <AccountPopover />}
+
       {openMenu && !isLandingPage && (
-        <Sidebar currentPath={currentPath} openMenu={openMenu} />
+        <Sidebar
+          currentPath={currentPath}
+          openMenu={openMenu}
+          onClick={() => setOpenMenu(false)}
+        />
       )}
 
       {openMenu && isLandingPage && <Menubar />}

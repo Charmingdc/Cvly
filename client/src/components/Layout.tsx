@@ -12,7 +12,7 @@ const Layout = () => {
         <Navbar />
       </header>
 
-      <main className='w-screen flex flex-col items-center p-4 pt-20'>
+      <main className='w-screen flex flex-col items-center p-5 pt-20'>
         <Suspense>
           <Outlet />
         </Suspense>
