@@ -9,11 +9,11 @@ const Dashboard = () => {
       </h1>
 
       <p className='text-muted-foreground -mt-1'>
-        Manage and view your cv analytics
+        Manage and view your documents analytics
       </p>
 
       <h1 className='font-bold text-muted-foreground text-xl mt-8 mb-2'>
-        General Cv Analytics
+        General Analytics
       </h1>
       <GeneralAnalytics />
     </div>

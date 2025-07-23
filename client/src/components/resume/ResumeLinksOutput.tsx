@@ -1,14 +1,15 @@
+import { useState } from "react";
+import { toast } from "sonner";
+
 import { Copy } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { toast } from "sonner";
-import { useState } from "react";
 
 type ResumeLinksOutputProps = {
   viewUrl: string;
 };
 
 const ResumeLinksOutput = ({ viewUrl }: ResumeLinksOutputProps) => {
-  const baseUrl = "http://localhost:5173";
+  const baseUrl = window.location.origin;
   const previewUrl = `${baseUrl}${viewUrl}`;
   const directUrl = `${previewUrl}.pdf`;
 
@@ -30,7 +31,7 @@ const ResumeLinksOutput = ({ viewUrl }: ResumeLinksOutputProps) => {
   };
 
   return (
-    <div className='w-full mt-6 space-y-2'>
+    <div className='w-full h-auto mt-6 space-y-2'>
       <h3 className='text-lg font-semibold text-muted-foreground'>
         Resume Links:
       </h3>
@@ -47,7 +48,9 @@ const ResumeLinksOutput = ({ viewUrl }: ResumeLinksOutputProps) => {
           >
             <Copy
               size={18}
-              className={copiedType === "preview" ? "text-green-500" : ""}
+              className={
+                copiedType === "preview" ? "text-green-500" : "text-foreground"
+              }
             />
           </Button>
         </div>
@@ -63,7 +66,9 @@ const ResumeLinksOutput = ({ viewUrl }: ResumeLinksOutputProps) => {
           >
             <Copy
               size={18}
-              className={copiedType === "direct" ? "text-green-500" : ""}
+              className={
+                copiedType === "direct" ? "text-green-500" : "text-foreground"
+              }
             />
           </Button>
         </div>

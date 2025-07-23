@@ -30,7 +30,7 @@ const protectedRoutes: AppRoute[] = [
   { path: "dashboard", element: <Dashboard /> },
   { path: "new", element: <UploadPage /> },
   { path: "resumes", element: <ResumesPage /> },
-  { path: "resume/:id", element: <ResumePage /> },
+  { path: "resume/:username/:resume_name", element: <ResumePage /> },
   { path: "settings", element: <SettingsPage /> }
 ];
 

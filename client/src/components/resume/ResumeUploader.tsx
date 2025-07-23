@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
+
 import { File, CloudUpload, FileUp, Trash } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ResumeLinksOutput from "@/components/resume/ResumeLinksOutput";
@@ -46,7 +48,7 @@ const ResumeUploader = () => {
   };
 
   return (
-    <div className='w-full flex flex-col gap-4 mt-6'>
+    <div className='w-full flex flex-col items-center gap-4 mt-6'>
       <div className='w-full flex flex-col gap-2 bg-card p-3 rounded-xl shadow'>
         <label
           htmlFor='resume-selector'
@@ -103,7 +105,18 @@ const ResumeUploader = () => {
         </Button>
       )}
 
-      {viewUrl && <ResumeLinksOutput viewUrl={viewUrl} />}
+      {viewUrl && (
+        <>
+          <ResumeLinksOutput viewUrl={viewUrl} />
+
+          <Link
+            to={viewUrl}
+            className='w-fit p-4 bg-card rounded-2xl shadow mb-4'
+          >
+            Visit Resume Page
+          </Link>
+        </>
+      )}
     </div>
   );
 };

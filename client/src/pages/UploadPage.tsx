@@ -6,8 +6,7 @@ const UploadPage = () => {
       <h1 className='font-bold text-3xl'>New Resume</h1>
 
       <p className='text-muted-foreground -mt-1'>
-        Upload a new resume by clicking the box below to get a cvly link you can
-        share anywhere.
+        Upload your resume (CVs also welcome!) and get a personal link to share with employers.
       </p>
 
       <ResumeUploader />
