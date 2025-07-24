@@ -1,3 +1,5 @@
+import ResumesList from "@/components/resume/ResumesList";
+
 const ResumesPage = () => {
   return (
     <div className='w-full flex flex-col gap-2'>
@@ -6,6 +8,8 @@ const ResumesPage = () => {
       <p className='text-muted-foreground -mt-1'>
         Manage and view your uploaded resumes
       </p>
+
+      <ResumesList />
     </div>
   );
 };

@@ -6,7 +6,11 @@ const ResumePage = () => {
 
   return (
     <div className='w-full flex flex-col gap-2 py-2'>
-      <h1 className='font-chewy font-extrabold text-2xl'>{resume_name}.pdf</h1>
+      <h1 className='font-chewy font-extrabold text-2xl'>
+        {resume_name}.pdf
+        {/**
+      resume name without safe parsing will be here later **/}
+      </h1>
 
       <div className='w-full flex flex-col gap-4 bg-card p-4 rounded-xl shadow mt-2'>
         <div className='w-full flex items-center justify-center h-[22rem] border border-dashed rounded-xl'>

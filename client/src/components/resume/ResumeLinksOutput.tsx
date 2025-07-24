@@ -5,12 +5,12 @@ import { Copy } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 type ResumeLinksOutputProps = {
-  viewUrl: string;
+  filePath: string;
 };
 
-const ResumeLinksOutput = ({ viewUrl }: ResumeLinksOutputProps) => {
-  const baseUrl = window.location.origin;
-  const previewUrl = `${baseUrl}${viewUrl}`;
+const ResumeLinksOutput = ({ filePath }: ResumeLinksOutputProps) => {
+  const baseUrl = `${window.location.origin} /resume`;
+  const previewUrl = `${baseUrl}${filePath}`;
   const directUrl = `${previewUrl}.pdf`;
 
   const [copiedType, setCopiedType] = useState<"preview" | "direct" | null>(

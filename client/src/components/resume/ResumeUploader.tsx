@@ -8,10 +8,10 @@ import ResumeLinksOutput from "@/components/resume/ResumeLinksOutput";
 
 const ResumeUploader = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [filename, setFilename] = useState("");
-  const [isUploading, setIsUploading] = useState(false);
-  const [username, setUsername] = useState("charmingdc");
-  const [viewUrl, setViewUrl] = useState("");
+  const [filename, setFilename] = useState<string>("");
+  const [isUploading, setIsUploading] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>("charmingdc");
+  const [filePath, setFilePath] = useState<string>("");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0] || null;
@@ -33,7 +33,7 @@ const ResumeUploader = () => {
 
     const safeFilename = filename
       .trim()
-      .replace(/\s+/g, "-")
+      .replace(/\s+/g, "_")
       .replace(/[^a-zA-Z0-9-_]/g, "");
 
     setIsUploading(true);
@@ -41,7 +41,7 @@ const ResumeUploader = () => {
     await new Promise(resolve => setTimeout(resolve, 1500)); // simulate delay
 
     toast.success("Resume uploaded (mock)!");
-    setViewUrl(`/resume/${username}/${safeFilename}`);
+    setFilePath(`${username}/${safeFilename}`);
     setFile(null);
     setFilename("");
     setIsUploading(false);
@@ -105,12 +105,12 @@ const ResumeUploader = () => {
         </Button>
       )}
 
-      {viewUrl && (
+      {filePath && (
         <>
-          <ResumeLinksOutput viewUrl={viewUrl} />
+          <ResumeLinksOutput filePath={filePath} />
 
           <Link
-            to={viewUrl}
+            to={`${window.location.origin}/resume/${filePath}`}
             className='w-fit p-4 bg-card rounded-2xl shadow mb-4'
           >
             Visit Resume Page
