@@ -1,8 +1,19 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { FileText, View, Download } from "lucide-react";
+import {
+  List,
+  ChevronUp,
+  ChevronDown,
+  FileText,
+  View,
+  Download
+} from "lucide-react";
+import CountsChart from "@/components/resume/CountsChart";
 
 const AnalyticsPage = () => {
   const { username, resume_name } = useParams();
+  const [openViewsLog, setOpenViewsLog] = useState<boolean>(false);
+  const [openDownloadsLog, setOpenDownloadsLog] = useState<boolean>(false);
 
   return (
     <div className='w-full flex flex-col gap-2 py-2'>
@@ -14,49 +25,92 @@ const AnalyticsPage = () => {
       resume name without safe parsing will be here later **/}
       </p>
 
-      <div className='w-full flex flex-col gap-4 bg-card p-4 rounded-xl shadow mt-2'>
-        <div className='w-full flex items-center justify-center h-[22rem] border border-dashed rounded-xl'>
-          <FileText className='w-72 h-72 text-muted-foreground' />
+      {/** Today's Entries logs **/}
+      <div className='w-full flex flex-col gap-2 p-3 bg-card rounded-lg shadow mt-6 mb-6'>
+        <h2 className='font-bold text-xl'> Today's Logs </h2>
+
+        <p className='text-muted-foreground -mt-1'>
+          View today's logs for each resume view and download.
+        </p>
+
+        <div className='w-full flex flex-row items-center justify-between gap-2 p-3 border rounded-lg'>
+          <List /> Views Logs Entries
+          <button
+            onClick={() => {
+              setOpenViewsLog(!openViewsLog);
+              setOpenDownloadsLog(false);
+            }}
+          >
+            {openViewsLog ? <ChevronUp size={30} /> : <ChevronDown size={30} />}
+          </button>
         </div>
 
-        <div className='w-full flex flex-col justify-center bg-background p-3 rounded-xl'>
-          <p className='text-muted-foreground'>
-            <span className='font-bold text-foreground'> File Uploader: </span>
-            {username}
-          </p>
-
-          <p className='text-muted-foreground'>
-            <span className='font-bold text-foreground'> File Name: </span>
-            {resume_name}
-          </p>
-
-          <p className='text-muted-foreground'>
-            <span className='font-bold text-foreground'> File Format: </span>
-            PDF
-          </p>
-
-          <p className='text-muted-foreground'>
-            <span className='font-bold text-foreground'> File Size: </span>
-            421KB
-          </p>
+        <div className='w-full flex flex-row items-center justify-between gap-2 p-3 border rounded-lg'>
+          <List /> Downloads Logs Entries
+          <button
+            onClick={() => {
+              setOpenDownloadsLog(!openDownloadsLog);
+              setOpenViewsLog(false);
+            }}
+          >
+            {openDownloadsLog ? (
+              <ChevronUp size={30} />
+            ) : (
+              <ChevronDown size={30} />
+            )}
+          </button>
         </div>
       </div>
 
-      <div className='w-full flex flex-row items-center justify-center gap-4 mt-3'>
-        <Link
-          to={`${window.location.origin}/${username}/${resume_name}.pdf`}
-          className='w-fit flex flex-row gap-2 bg-card p-4 rounded-2xl shadow'
-        >
-          <View /> Open
-        </Link>
+      {/** Resume Views and Downloads count **/}
+      <div className='w-full grid grid-cols-[repeat(auto-fit,minmax(19rem,1fr))]  grid-rows-[repeat(auto-fit, 1fr)] justify-center content-center gap-5'>
+        {/** Today's Anayltics  **/}
+        <div className='w-full flex flex-col gap-3 p-3 bg-card rounded-lg shadow'>
+          <h2 className='font-bold text-xl mb-2'> Today's Anayltics </h2>
+          <CountsChart
+            title='Views Count Stats'
+            desc='Number of views today.'
+            count={0}
+          />
 
-        <a
-          href={`${window.location.origin}/${username}/${resume_name}.pdf`}
-          className='w-fit flex flex-row gap-2 bg-card p-4 rounded-2xl shadow'
-          download={`${resume_name}.pdf`}
-        >
-          <Download /> Download
-        </a>
+          <CountsChart
+            title='Downloads Count Stats'
+            desc='Number of downloads today.'
+            count={0}
+          />
+        </div>
+
+        {/** This Week Anayltics  **/}
+        <div className='w-full flex flex-col gap-3 p-3 bg-card rounded-lg shadow'>
+          <h2 className='font-bold text-xl mb-2'> This Week Anayltics </h2>
+          <CountsChart
+            title='Views Count Stats'
+            desc='Number of views this week.'
+            count={0}
+          />
+
+          <CountsChart
+            title='Downloads Count Stats'
+            desc='Number of downloads this week.'
+            count={0}
+          />
+        </div>
+
+        {/** All Time Anayltics  **/}
+        <div className='w-full flex flex-col gap-3 p-3 bg-card rounded-lg shadow'>
+          <h2 className='font-bold text-xl mb-2'> All Time Anayltics </h2>
+          <CountsChart
+            title='Views Count Stats'
+            desc='Total Number of Views.'
+            count={0}
+          />
+
+          <CountsChart
+            title='Downloads Count Stats'
+            desc='Total Number of Downloads.'
+            count={0}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { View, ChartColumn } from "lucide-react";
+import { View, FilePenLine, ChartColumn, Trash } from "lucide-react";
+import Button from "@/components/ui/Button";
 import type { DisplayResume } from "@/types/index";
 
 const ResumeUI = ({ resume }: { resume: DisplayResume }) => {
@@ -7,7 +8,7 @@ const ResumeUI = ({ resume }: { resume: DisplayResume }) => {
 
   return (
     <div className='w-full flex flex-col bg-card p-3 gap-3 rounded-lg shadow md:w-[19rem]'>
-      <h2 className='font-chewy font-bold text-xl'> {resume.display_name} </h2>
+      <h2 className='font-extrabold text-xl'> {resume.display_name} </h2>
 
       <p className='text-muted-foreground'>
         <strong className='text-foreground'>File Size: </strong>
@@ -18,20 +19,34 @@ const ResumeUI = ({ resume }: { resume: DisplayResume }) => {
         {resume.updated_at}
       </p>
 
-      <div className='w-full flex flex-row items-center justify-center gap-2'>
+      <div className='w-full flex flex-row flex-wrap items-center justify-center gap-2'>
         <Link
           to={`${baseUrl}/resume/${resume.storage_path}`}
-          className='w-full flex flex-row items-center gap-2 py-2 px-4 border rounded-lg'
+          className='w-[48%] flex flex-row items-center gap-2 py-2 px-4 border rounded-lg'
         >
           <View size={18} /> View
         </Link>
 
         <Link
+          to={`${baseUrl}/resume/${resume.storage_path}`}
+          className='w-[48%] flex flex-row items-center gap-2 py-2 px-4 border rounded-lg'
+        >
+          <FilePenLine size={18} /> Edit
+        </Link>
+
+        <Link
           to={`${baseUrl}/analytics/${resume.storage_path}`}
-          className='w-full flex flex-row items-center gap-2 py-2 px-4 border rounded-lg'
+          className='w-[48%] flex flex-row items-center gap-2 py-2 px-4 border rounded-lg'
         >
           <ChartColumn size={18} /> Analytics
         </Link>
+
+        <Button
+          variant='destructive'
+          className='w-[48%] py-[.6rem] px-4 !justify-start rounded-lg'
+        >
+          <Trash size={18} /> Delete
+        </Button>
       </div>
     </div>
   );
