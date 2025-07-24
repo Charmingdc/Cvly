@@ -11,6 +11,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const UploadPage = lazy(() => import("./pages/UploadPage"));
 const ResumesPage = lazy(() => import("./pages/ResumesPage"));
 const ResumePage = lazy(() => import("./pages/ResumePage"));
+const AnalyticsPage = lazy(() => import("./pages/AnalyticsPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
 interface AppRoute {
@@ -31,6 +32,7 @@ const protectedRoutes: AppRoute[] = [
   { path: "new", element: <UploadPage /> },
   { path: "resumes", element: <ResumesPage /> },
   { path: "resume/:username/:resume_name", element: <ResumePage /> },
+  { path: "analytics/:username/:resume_name", element: <AnalyticsPage /> },
   { path: "settings", element: <SettingsPage /> }
 ];
 

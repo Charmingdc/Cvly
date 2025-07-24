@@ -6,8 +6,8 @@ const ResumeUI = ({ resume }: { resume: DisplayResume }) => {
   const baseUrl = `${window.location.origin}`;
 
   return (
-    <div className='w-full flex flex-col bg-card p-3 gap-3 rounded-lg shadow mb-3'>
-      <h2 className='font-bold text-xl'> {resume.display_name} </h2>
+    <div className='w-full flex flex-col bg-card p-3 gap-3 rounded-lg shadow md:w-[19rem]'>
+      <h2 className='font-chewy font-bold text-xl'> {resume.display_name} </h2>
 
       <p className='text-muted-foreground'>
         <strong className='text-foreground'>File Size: </strong>
