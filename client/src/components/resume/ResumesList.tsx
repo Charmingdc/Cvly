@@ -41,7 +41,7 @@ const ResumesList = () => {
     }
   ];
   return (
-    <div className='w-full flex flex-col items-center gap-3 mt-4 md:flex-row md:flex-wrap'>
+    <div className="w-full flex flex-col items-center justify-center gap-4 mt-4 md:flex-row md:flex-wrap">
       {resumes.length > 0 ? (
         resumes.map((resume, i) => <ResumeUI key={i} resume={resume} />)
       ) : (
